@@ -1,4 +1,4 @@
-ht/* RESET */
+/* RESET */
 
 *{
 margin:0;
@@ -23,9 +23,7 @@ color:#333;
 header{
 background:white;
 box-shadow:0 2px 10px rgba(0,0,0,0.05);
-position:sticky;
-top:0;
-z-index:1000;
+position:relative;
 }
 
 .nav{
@@ -342,4 +340,148 @@ margin-top:10px;
 width:100%;
 max-width:900px;
 margin:auto;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:1024px){
+.nav{
+flex-direction:column;
+gap:10px;
+}
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+}
+
+@media (max-width:768px){
+
+.logo{
+height:38px;
+}
+
+.nav{
+padding:10px;
+}
+
+nav{
+flex-direction:column;
+gap:8px;
+width:100%;
+}
+
+nav a{
+width:100%;
+text-align:center;
+}
+
+input,select,button{
+width:100%;
+}
+
+.grid-marcas{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media (max-width:480px){
+
+body{
+font-size:14px;
+}
+
+.logo{
+height:34px;
+}
+
+.grid-marcas{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:22px;
+text-align:center;
+}
+
+.hero p{
+text-align:center;
+}
+
+section{
+padding:20px 10px;
+}
+
+}
+/* BOTON MENU */
+.menu-toggle{
+display:none;
+background:none;
+border:none;
+font-size:26px;
+cursor:pointer;
+}
+
+/* HEADER MOVIL ORDENADO */
+
+@media (max-width:768px){
+
+.nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 15px;
+}
+
+/* BOTON MENU IZQUIERDA */
+
+.menu-toggle{
+display:block;
+order:1;
+}
+
+/* LOGO CENTRO */
+
+.logo-area{
+display:flex;
+justify-content:center;
+flex:1;
+order:2;
+}
+
+.logo{
+height:36px;
+}
+
+/* BASES DERECHA */
+
+.btn-bases{
+order:3;
+font-size:13px;
+padding:6px 12px;
+margin-left:0;
+}
+
+/* MENU DESPLEGABLE */
+
+nav{
+display:none;
+position:absolute;
+top:60px;
+right:15px;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+border-radius:10px;
+padding:15px;
+flex-direction:column;
+gap:10px;
+width:220px;
+}
+
+nav.activo{
+display:flex;
+}
+
 }
